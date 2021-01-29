@@ -41,7 +41,7 @@ class EventChecker:
 		self.to_date=self.metric_dict['date_range']['to_date']
 
 		# make the output path (if necessary)
-		self.save_path = '../../../fight-churn-output/' + self.schema + '/'
+		self.save_path = '../../../../fight-churn-output/' + self.schema + '/'
 		os.makedirs(self.save_path,exist_ok=True)
 
 		# Make a sql connection with sqlalchmey

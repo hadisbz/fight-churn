@@ -171,7 +171,9 @@ def python_listing(chapter, listing, name, param_dict):
 
     # Load the listing name module
     full_name = _full_listing_name(chapter, listing, name)
+    print(full_name)
     mod = import_module(full_name)
+    print(mod)
 
     ex_fun = getattr(mod, name,None)
     if ex_fun is not None:
@@ -268,6 +270,7 @@ def run_one_listing(args):
     listing_params = load_and_check_listing_params(args)
 
     print('\nRunning chapter %d listing %d %s on schema %s' % (args.chapter,args.listing,listing_params['name'],args.schema))
+    print(listing_params)
 
     # Run the executor function for sql or for python...
     type = listing_params.get('type', listing_params['type']) # chap params should always have type
